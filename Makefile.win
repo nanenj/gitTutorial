@@ -1,0 +1,33 @@
+# Project: askName
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = main.o askname.o $(RES)
+LINKOBJ  = main.o askname.o $(RES)
+LIBS =  -L"C:/MinGW/lib"  
+INCS =  -I"C:/MinGW/include" 
+CXXINCS = 
+BIN  = askName.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before askName.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o "askName.exe" $(LIBS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+askname.o: askname.c
+	$(CC) -c askname.c -o askname.o $(CFLAGS)
